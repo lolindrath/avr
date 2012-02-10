@@ -2,7 +2,7 @@
 #ifndef _ATMEGA328_ANDY_
 #define _ATMEGA328_ANDY_
 
-#define F_CPU 8000000UL
+//#define F_CPU 8000000UL
 
 #define PORT_B 1
 #define PORT_C 2

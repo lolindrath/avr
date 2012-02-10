@@ -98,7 +98,7 @@ int main (void)
 		}
 		*/
 
-		delay_ms(1);
+		delay_ms(10);
 		cli();
 
 		if(set == 1)

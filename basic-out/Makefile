@@ -40,7 +40,6 @@
 
 
 # MCU name
-#MCU = atmega168
 MCU = atmega328p
 
 
@@ -49,7 +48,6 @@ MCU = atmega328p
 #     processor frequency. You can then use this symbol in your source code to 
 #     calculate timings. Do NOT tack on a 'UL' at the end, this will be done
 #     automatically to create a 32-bit value in your source code.
-//F_CPU = 8000000
 F_CPU = 16000000
 
 
@@ -58,11 +56,11 @@ FORMAT = ihex
 
 
 # Target file name (without extension).
-TARGET = charlieplexing
+TARGET = basic-out-atmega368
 
 
 # List C source files here. (C dependencies are automatically generated.)
-SRC = $(TARGET).c ../src/atmega328p.c
+SRC = $(TARGET).c
 
 
 # List Assembler source files here.
@@ -92,7 +90,7 @@ DEBUG = dwarf-2
 #     Each directory must be seperated by a space.
 #     Use forward slashes for directory separators.
 #     For a directory that has spaces, enclose it in quotes.
-EXTRAINCDIRS = /usr/lib/gcc/avr/4.3.5/include ../include
+EXTRAINCDIRS = 
 
 
 # Compiler flag to set the C Standard level.
@@ -199,11 +197,10 @@ LDFLAGS += $(PRINTF_LIB) $(SCANF_LIB) $(MATH_LIB)
 #
 # Type: avrdude -c ?
 # to get a full listing.
-#AVRDUDE_PROGRAMMER = stk200
+#
 AVRDUDE_PROGRAMMER = ponyser
 
 # com1 = serial port. Use lpt1 to connect to parallel port.
-#AVRDUDE_PORT = lpt1
 AVRDUDE_PORT = /dev/ttyS0
 
 AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
